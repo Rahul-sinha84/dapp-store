@@ -1,7 +1,10 @@
-import "../sass/main.scss";
+"use client";
+import { connect } from "react-redux";
 
-const Home = () => {
+const Home = ({ state }) => {
   return <div className="main">Hello this is from dapp-store</div>;
 };
 
-export default Home;
+const mapStateToProps = (state) => ({ state });
+
+export default connect(mapStateToProps)(Home);

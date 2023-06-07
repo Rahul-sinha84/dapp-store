@@ -1,10 +1,20 @@
-export default function RootLayout({ children }) {
+"use client";
+import { Provider } from "react-redux";
+import { store } from "../redux/init";
+import Head from "next/head";
+import "../sass/main.scss";
+
+const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <head>
+      <Head>
         <title>Dapp-Store</title>
-      </head>
-      <body>{children}</body>
+      </Head>
+      <body>
+        <Provider store={store}>{children}</Provider>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
