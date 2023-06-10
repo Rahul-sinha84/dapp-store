@@ -1,0 +1,16 @@
+button.button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  &-primary {
+    background-color: $color-primary;
+  }
+  &-failure {
+    background-color: $color-red;
+  }
+}

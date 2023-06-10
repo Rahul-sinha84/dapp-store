@@ -1,0 +1,61 @@
+.dashboard {
+  &__container {
+    height: 100%;
+    &--first {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .left-navigation {
+        width: 13rem;
+        background-color: $color-bg-dark;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        &__container {
+          flex: 1;
+          .header {
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+            .profile {
+              align-self: flex-start;
+              width: fit-content;
+              padding: 0.5rem 0.8rem;
+              &__container {
+                display: flex;
+                align-items: center;
+                .img {
+                }
+                .address {
+                  margin-left: 0.5rem;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+          .content {
+            &__container {
+              .item {
+                padding: 0.8rem 1rem;
+                width: 10rem;
+                border-radius: 0.5rem;
+                margin-bottom: 1rem;
+                cursor: pointer;
+                text-align: center;
+                .text {
+                  font-weight: 600;
+                }
+                &:hover {
+                  background-color: $color-primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &--second {
+    }
+  }
+}
