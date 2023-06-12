@@ -1,9 +1,8 @@
 .dashboard {
   &__container {
     height: 100%;
-    &--first {
+    &--content {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       .left-navigation {
         width: 13rem;
@@ -54,8 +53,84 @@
           }
         }
       }
-    }
-    &--second {
+      .right-navigation {
+        flex: 1;
+        &__container {
+          &--add {
+            .add-password {
+              &__container {
+                padding: 1rem 2rem;
+                background-color: $color-bg-lighter;
+                margin: 0 10rem;
+                border-radius: 0.3rem;
+                .title {
+                  font-size: 1.5rem;
+                  font-weight: 500;
+                }
+                .form-group {
+                  margin-top: 1.5rem;
+                  & .form-item:not(:first-child) {
+                    margin-top: 1.5rem;
+                  }
+                  .form-item {
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                      font-size: 1.2rem;
+                      font-weight: 500;
+                      width: fit-content;
+                      span {
+                        color: $color-red;
+                        font-weight: 600;
+                      }
+                    }
+                    .input-group {
+                      background-color: #fff;
+                      border-radius: 0.2rem;
+                      margin-top: 0.5rem;
+                      display: flex;
+                      align-items: center;
+                      input {
+                        margin-top: 0;
+                        flex: 1;
+                      }
+                      svg {
+                        cursor: pointer;
+                        margin-right: 0.3rem;
+                      }
+                    }
+                    input {
+                      font-size: 1.2rem;
+                      margin-top: 0.5rem;
+                      padding: 0.3rem 0.5rem;
+                      border: none;
+                      outline: none;
+                      font-weight: 500;
+                      border-radius: 0.2rem;
+                    }
+                    button.generate-password {
+                      background-color: $color-yellow;
+                      width: fit-content;
+                      font-weight: 700;
+                      color: $color-bg-light;
+                      padding: 0.1rem 0.2rem;
+                      margin-top: 0.3rem;
+                      border-radius: 0.2rem;
+                      cursor: pointer;
+                      border: none;
+                      outline: none;
+                    }
+                  }
+                }
+                .btn-container {
+                  margin-top: 1rem;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

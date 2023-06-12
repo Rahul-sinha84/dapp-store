@@ -1,7 +1,9 @@
 import {
+  CERAMIC,
   CURRENT_ACCOUNT,
   IS_CERAMIC_AUTHENTICATED,
   LOAD,
+  LOADER_CONTENT,
   METAMASK_CONNECT_FUNCTION,
   METAMASK_STATUS,
   SHOW_LOADER,
@@ -23,5 +25,13 @@ export const changeMetamaskStatus = (payload) => ({
 export const changeShowLoader = (payload) => ({ type: SHOW_LOADER, payload });
 export const changeCeramicAuthenticated = (payload) => ({
   type: IS_CERAMIC_AUTHENTICATED,
+  payload,
+});
+export const changeLoaderContent = (payload) => ({
+  type: LOADER_CONTENT,
+  payload,
+});
+export const changeCeramic = (payload) => ({
+  type: CERAMIC,
   payload,
 });

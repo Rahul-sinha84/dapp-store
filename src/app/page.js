@@ -8,6 +8,8 @@ import {
   changeMetamaskStatus,
   changeShowLoader,
   changeCeramicAuthenticated,
+  changeLoaderContent,
+  changeCeramic,
 } from "../redux/action";
 import {
   checkMetamaskStatus,
@@ -28,6 +30,8 @@ const Home = ({
   changeMetamaskStatus,
   changeShowLoader,
   changeCeramicAuthenticated,
+  changeLoaderContent,
+  changeCeramic,
 }) => {
   const { metamaskStatus, currentAccount } = state;
 
@@ -46,14 +50,17 @@ const Home = ({
     if (metamaskStatus && currentAccount) {
       (async () => {
         changeShowLoader(true);
+        changeLoaderContent("DID configuration for your address...");
+
         ceramic.current = new CeramicClient(
           "https://ceramic-clay.3boxlabs.com"
         );
         threeid.current = new ThreeIdConnect();
 
         await authenticateWithEthereum(currentAccount, threeid, ceramic);
-        changeCeramicAuthenticated(true);
 
+        changeCeramic(ceramic);
+        changeCeramicAuthenticated(true);
         changeShowLoader(false);
       })();
     }
@@ -79,4 +86,6 @@ export default connect(mapStateToProps, {
   changeMetamaskStatus,
   changeShowLoader,
   changeCeramicAuthenticated,
+  changeLoaderContent,
+  changeCeramic,
 })(Home);
